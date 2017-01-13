@@ -1,0 +1,55 @@
+"기본세팅
+set autoindent
+set cindent
+set ts=4 sw=4
+syntax enable
+colorscheme default
+" need to change scheme, refer here http://blog.naver.com/kkissbee/220882717464
+
+"현재 경로 항상 하단에 표시하기
+set ls=2
+set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
+
+"라인넘버 표시
+set nu
+
+" 현재 커서 위치 표시
+set ruler
+
+" 마지막으로 수정된 곳에 커서를 위치함
+au BufReadPost *
+\ if line("'\"") > 0 && line("'\"") <= line("$") |
+\ exe "norm g`\"" |
+\ endif
+
+"tag paths 추가
+set tags+=/usr/include/tags
+
+"자동완성
+set complete
+
+"ctags 검색속도 개선하기
+set tagbsearch
+
+"taglist 관련 설정
+let Tlist_WinWidth = 35
+
+"taglist 매크로 키
+map <F3> <c-w><c-w>
+map <F4> :Tlist<cr>
+
+"function folding (open is just -> or zo)
+map <F1> v]}zf "fold
+
+"change buffer easily
+map ,1 :b!1<cr>
+map ,2 :b!2<cr>
+map ,3 :b!3<cr>
+map ,4 :b!4<cr>
+map ,5 :b!5<cr>
+map ,6 :b!6<cr>
+map ,7 :b!7<cr>
+map ,8 :b!8<cr>
+map ,9 :b!9<cr>
+map ,0 :b!0<cr>
+map ,w :b!w<cr> " close current buffer
